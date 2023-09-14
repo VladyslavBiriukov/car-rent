@@ -1,0 +1,113 @@
+$bg-gray: #f8f8f8;
+$bg-white: #ffffff;
+
+$text-black: #010103;
+$text-orange: #ff4d30;
+$btn-black: #161616;
+$text-gray: #706f7b;
+
+$h1-size: 5.2rem;
+$h2-size: 4.2rem;
+$h3-size: 2.4rem;
+$h4-size: 2.2rem;
+$p-size: 1.6rem;
+$input-size: 1.4rem;
+
+$titles-font: "Poppins", sans-serif;
+$text-font: "Rubik", sans-serif;
+
+.container {
+    max-width: 133rem !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+}
+
+.heroSection {
+    width: 100%;
+    height: 97vh;
+    background-color: white;
+    position: relative;
+}
+
+.bgShape {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.heroContent {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.heroText {
+        display: flex;
+        flex-direction: column;
+        z-index: 3;
+        max-width: 39rem;
+        margin-top: 5rem;
+}
+
+                .heroTextH4 {
+            font-size: $h4-size;
+            font-family: $text-font;
+            color: $text-black;
+        }
+
+        .heroTextH1 {
+            font-size: $h1-size;
+            font-family: $titles-font;
+            font-weight: 700;
+            color: $text-black;
+            line-height: 1.2;
+            margin-top: 1rem;
+            margin-bottom: 2.3rem;
+        }
+                        .heroTextSpan {
+                color: $text-orange;
+            }
+
+                .heroTextP {
+            font-size: $p-size;
+            font-family: $text-font;
+            line-height: 1.6;
+            color: $text-gray;
+            margin-bottom: 4rem;
+        }
+
+
+    .carImg {
+        z-index: 2;
+        position: absolute;
+        right: 0;
+        width: 65%;
+        margin-top: 5rem;
+    }
+
+
+.scrollUp {
+    position: fixed;
+    font-size: 2.5rem;
+    color: white;
+    background-color: $text-orange;
+    border: 3px solid white;
+    width: 2rem;
+    height: 2rem;
+    bottom: 5rem;
+    right: 5rem;
+    z-index: 20;
+    display: none;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 2rem;
+    cursor: pointer;
+}
+
+.showScroll {
+    display: flex;
+}
