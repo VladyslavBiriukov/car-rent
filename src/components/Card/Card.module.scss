@@ -1,26 +1,84 @@
 
 
 .card {
+    position: relative;
     width: 274px;
     height: 426px;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-top: 14px;
+        margin-right: 14px;
+        width: 18px;
+        height: 18px;
+        background-image: url("/images/heart.svg");
+        color: white
+    }
+
 }
 
 .img {
+    display: block;
     width: 274px;
     height: 268px;
     object-fit: cover;
     border-radius: 14px;
     background: linear-gradient(180deg, rgba(18, 20, 23, 0.50) 2.5%, rgba(18, 20, 23, 0.00) 41.07%), #F3F3F2;
+
 }
 
 .btn {
-    color: white;
     width: 274px;
     height: 44px;
-    padding: 12px 99px;
-    border: 2px solid #ff4d30;
-    border-radius: 0.3rem;
+    padding: 12px 98px;
+    border-radius: 12px;
+    margin-top: 28px;
     background: #ff4d30;
-    text-align: center;
+    border: none;
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.43;
     cursor: pointer;
+
+    transition: all 0.3s;
+
+    &:hover {
+        background-color: #fc3d20;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.carName {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 14px;
+    color: #121417;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.model {
+    color: #ff4d30;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.description {
+    width: 270px;
+    height: 40px;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.address {
+    color: rgba(18, 20, 23, 0.50);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
 }

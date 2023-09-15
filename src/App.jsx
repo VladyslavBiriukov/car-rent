@@ -5,6 +5,7 @@ import { Catalog } from "./pages/Catalog";
 import { Favorites } from "./pages/Favorites";
 import { Layout } from "./components/Layout/Layout";
 import { ErrorPage } from "./pages/ErrorPage";
+// import {Loader} from "./components/Loader/Loader"
 
 export const App = () => {
   return (

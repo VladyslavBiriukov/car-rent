@@ -16,14 +16,19 @@ export const Form = () => {
             return (
               <Form>
                 <Field
-                  type="text"
+                  component="select"
                   name="name"
                   placeholder="Name"
                   onChange={(e) => {
                     setFieldTouched("name");
                     handleChange(e);
                   }}
-                />
+                >
+                  <option value="NY">New York</option>
+                  <option value="SF">San Francisco</option>
+                  <option value="CH">Chicago</option>
+                  <option value="OTHER">Other</option>
+                </Field>
               </Form>
             );
           }}

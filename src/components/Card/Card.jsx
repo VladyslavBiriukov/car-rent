@@ -1,41 +1,56 @@
 import PropTypes from "prop-types";
-import style from "./Card.module.scss";
+import styles from "./Card.module.scss";
+import { useState } from "react";
+import { Modal } from "../Modal/Modal";
 
 export const Card = ({ data }) => {
   const {
-    accessories,
     address,
-    description,
-    engineSize,
-    fuelConsumption,
     functionalities,
     img,
     make,
     mileage,
     model,
     rentalCompany,
-    rentalConditions,
     rentalPrice,
     type,
     year,
   } = data;
 
+  const [openModal, setOpenModal] = useState(false);
+
   const splitAddress = address.split(",");
 
+  const handleOpenModal = () => {
+    setOpenModal(true);
+  };
+
+  const handleModalClose = () => {
+    setOpenModal(false);
+  };
+
   return (
-    <div className={style.card}>
-      <img className={style.img} src={img} alt="car" />
-      <p>
-        {make} {model}, {year}
-        <span>{rentalPrice}</span>
-      </p>
-      <p>
-        {splitAddress[2]}|{splitAddress[1]}|{rentalCompany}
-      </p>
-      <p>
-        {type}|{model}|{mileage}|{functionalities[0]}
-      </p>
-      <button className={style.btn}>Learn more</button>
+    <div className={styles.card}>
+      <img className={styles.img} src={img} alt="car" />
+      <div className={styles.carName}>
+        <p>
+          {make} <span className={styles.model}>{model}</span>, {year}
+        </p>
+        <p>{rentalPrice}</p>
+      </div>
+
+      <div className={styles.description}>
+        <p className={styles.address}>
+          {splitAddress[1]} | {splitAddress[2]} | {rentalCompany}
+        </p>
+        <p className={styles.address}>
+          {type} | {model} | {mileage} | {functionalities[0]}
+        </p>
+      </div>
+      <button onClick={handleOpenModal} className={styles.btn}>
+        Learn more
+      </button>
+      {openModal && <Modal data={data} close={handleModalClose} />}
     </div>
   );
 };
