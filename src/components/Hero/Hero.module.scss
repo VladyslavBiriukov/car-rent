@@ -18,8 +18,9 @@ $text-font: "Rubik", sans-serif;
 
 .container {
     max-width: 133rem !important;
-    margin: 0 auto !important;
     padding: 0 20px !important;
+    margin-left: 150px;
+    margin-right: 150px;
 }
 
 .heroSection {
@@ -48,7 +49,7 @@ $text-font: "Rubik", sans-serif;
         display: flex;
         flex-direction: column;
         z-index: 3;
-        max-width: 39rem;
+        max-width: 30rem;
         margin-top: 5rem;
 }
 

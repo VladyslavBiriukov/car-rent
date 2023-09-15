@@ -1,24 +1,20 @@
-
-
 .card {
     position: relative;
     width: 274px;
     height: 426px;
 
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        margin-top: 14px;
-        margin-right: 14px;
-        width: 18px;
-        height: 18px;
-        background-image: url("/images/heart.svg");
-        color: white
-    }
-
 }
+
+.heart {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 14px;
+    margin-right: 14px;
+    width: 18px;
+    height: 18px;
+}
+
 
 .img {
     display: block;
@@ -36,19 +32,15 @@
     padding: 12px 98px;
     border-radius: 12px;
     margin-top: 28px;
-    background: #ff4d30;
+    background: #3470FF;
     border: none;
     color: #FFF;
     font-size: 14px;
     font-weight: 600;
     line-height: 1.43;
-    cursor: pointer;
-
-    transition: all 0.3s;
 
     &:hover {
-        background-color: #fc3d20;
-        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        background-color: #0B44CD;
     }
 }
 
@@ -63,7 +55,7 @@
 }
 
 .model {
-    color: #ff4d30;
+    color: #3470FF;
     font-size: 16px;
     font-weight: 500;
     line-height: 1.5;

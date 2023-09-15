@@ -5,11 +5,11 @@ import { Catalog } from "./pages/Catalog";
 import { Favorites } from "./pages/Favorites";
 import { Layout } from "./components/Layout/Layout";
 import { ErrorPage } from "./pages/ErrorPage";
-// import {Loader} from "./components/Loader/Loader"
+import {Loader} from "./components/Loader/Loader"
 
 export const App = () => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<Loader />}>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
