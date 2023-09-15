@@ -6,10 +6,12 @@ import styles from './Hero.module.scss';
 import BgShape from "../../images/hero/hero-bg.png";
 import HeroCar from "../../images/hero/main-car.png";
 
+import { IconChevronRight } from "@tabler/icons-react";
+
 export const Hero = () => {
-//       const scrollToTop = () => {
-//     window.scrollTo({ top: (0, 0), behavior: "smooth" });
-//   };
+    //       const scrollToTop = () => {
+    //     window.scrollTo({ top: (0, 0), behavior: "smooth" });
+    //   };
     return (
         <>
             <section id="home" className={styles.heroSection}>
@@ -26,6 +28,13 @@ export const Hero = () => {
                                 flexible pick-up options and much more.
                             </p>
                         </div>
+                        
+                            <Link
+                                className={styles.heroBtn}
+                                to="/catalog"
+                            >
+                                Look at our catalog &nbsp; <IconChevronRight />
+                            </Link>
                         {/* img */}
                         <img
                             src={HeroCar}
