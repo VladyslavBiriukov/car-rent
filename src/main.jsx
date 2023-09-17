@@ -12,7 +12,7 @@ const router = createBrowserRouter(
       element: <App />,
     },
   ],
-  { basename: import.meta.env.DEV ? "/" : "/rent_car/" }
+  { basename: import.meta.env.DEV ? "/" : "/car-rent/" }
 );
 
 ReactDOM.createRoot(document.getElementById("root")).render(

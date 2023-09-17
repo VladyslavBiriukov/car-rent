@@ -7,6 +7,8 @@ export const Favorite = () => {
   const [cars, setcars] = useState(false);
   const [favorite, setFavorite] = useState(false);
 
+  console.log("cars", cars);
+
   useEffect(() => {
     setFavorite(false);
     const local = JSON.parse(localStorage.getItem("fav"));
@@ -21,8 +23,10 @@ export const Favorite = () => {
 
   return (
     <div className={styles.conteiner}>
-      {cars && (
+      {cars && cars.length > 0 ? (
         <CarList changeFav={handleChangeFavorite} fav={true} cars={cars} />
+      ) : (
+        <div className={styles.not_have}>You do not have favorite car yet</div>
       )}
     </div>
   );
