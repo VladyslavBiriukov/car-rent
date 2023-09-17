@@ -4,7 +4,7 @@ import Select from "react-select";
 import styles from "./Form.module.scss";
 import { useEffect, useState } from "react";
 import { getAllCar } from "../../api/api";
-import { priceOption, selectOption } from "./selectOption";
+import { priceOption, selectOption } from "./select_option";
 import { filterCar } from "./filter";
 
 const initialValue = {
