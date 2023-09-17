@@ -1,1 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap');
+@import "../components//SearchForm/Form.module.scss";
+
+html {
+    font-family: 'Manrope', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.conteiner {
+    margin: 150px 129px;
+}
