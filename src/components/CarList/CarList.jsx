@@ -11,12 +11,12 @@ export const CarList = ({ cars, changeFav, fav }) => {
   }, [cars]);
 
   return (
-    <ul className={styles.cards}>
-      {rentalCars &&
-        rentalCars.map((car) => (
-          <Card key={car.id} fav={fav} change={changeFav} data={car} />
-        ))}
-    </ul>
+<ul className={styles.cards}>
+  {rentalCars &&
+    rentalCars.map((car, index) => (
+      <Card key={index} fav={fav} change={changeFav} data={car} />
+    ))}
+</ul>
   );
 };
 

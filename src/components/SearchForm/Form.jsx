@@ -1,4 +1,3 @@
-
 import PropTypes from "prop-types";
 import Select from "react-select";
 import styles from "./Form.module.scss";
@@ -8,14 +7,14 @@ import { priceOption, selectOption } from "./select_option";
 import { filterCar } from "./filter";
 
 const initialValue = {
-  brand: "",
-  price: "",
+  make: "", // Изменяем "brand" на "make"
+  rentalPrice: "", // Изменяем "price" на "rentalPrice"
   minMileage: "",
   maxMileage: "",
 };
 
 export const Form = ({ getSearchCar }) => {
-  const [brand, setBrand] = useState();
+  const [make, setMake] = useState(); // Изменяем "brand" на "make"
   const [allCar, setAllCar] = useState();
   let select = [];
   const [searchParams, setSearchParams] = useState(initialValue);
@@ -24,14 +23,14 @@ export const Form = ({ getSearchCar }) => {
     (async () => {
       const all = await getAllCar();
       setAllCar(all);
-      const allBrand = new Set();
-      all.map((item) => allBrand.add(item.make));
-      setBrand(Array.from(allBrand));
+      const allMakes = new Set();
+      all.map((item) => allMakes.add(item.make)); // Изменяем "brand" на "make"
+      setMake(Array.from(allMakes)); // Изменяем "brand" на "make"
     })();
   }, []);
 
-  if (brand) {
-    select = selectOption(brand);
+  if (make) {
+    select = selectOption(make); // Изменяем "brand" на "make"
   }
 
   const price = priceOption(300);
@@ -46,7 +45,7 @@ export const Form = ({ getSearchCar }) => {
       <form onSubmit={search} className={styles.form_conteiner}>
         <div>
           <label className={styles.label} htmlFor="brand_car">
-            Car brand
+            Car make {/* Изменяем "Car brand" на "Car make" */}
             <Select
               placeholder="Enter the text"
               unstyled
@@ -55,10 +54,10 @@ export const Form = ({ getSearchCar }) => {
               onChange={(e) =>
                 setSearchParams((prev) => ({
                   ...prev,
-                  brand: e.value,
+                  make: e.value,
                 }))
               }
-              tabSelectsValue={searchParams.brand}
+              tabSelectsValue={searchParams.make}
             />
           </label>
         </div>
@@ -73,10 +72,10 @@ export const Form = ({ getSearchCar }) => {
               onChange={(search) =>
                 setSearchParams((prev) => ({
                   ...prev,
-                  price: search.value,
+                  rentalPrice: search.value, // Изменяем "price" на "rentalPrice"
                 }))
               }
-              tabSelectsValue={searchParams.price}
+              tabSelectsValue={searchParams.rentalPrice} // Изменяем "price" на "rentalPrice"
               getOptionValue={(options) => options.label + "$"}
             />
             <span className={styles.price_span}>To</span>
@@ -84,7 +83,7 @@ export const Form = ({ getSearchCar }) => {
         </div>
         <div>
           <label className={styles.label}>
-            Сar mileage / km
+            Car mileage / km {/* Изменяем "Сar mileage / km" на "Car mileage / km" */}
             <div className={styles.input_form}>
               <div className={styles.mileage_conteiner}>
                 <div className={styles.mileage_conteiner2}>

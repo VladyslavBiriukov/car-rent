@@ -1,10 +1,10 @@
 export const filterCar = (search, array) => {
-  const { brand, price, minMileage, maxMileage } = search;
+  const { make, rentalPrice, minMileage, maxMileage } = search; // Изменяем "brand" на "make"
 
   return array
     .filter(item => {
-      if (brand && item.make !== brand) return false;
-      if (price && Number(item.rentalPrice.slice(1)) > price) return false;
+      if (make && item.make !== make) return false;
+      if (rentalPrice && Number(item.rentalPrice.slice(1)) > rentalPrice) return false; // Изменяем "price" на "rentalPrice"
       if (minMileage && item.mileage < minMileage) return false;
       if (maxMileage && item.mileage > maxMileage) return false;
       return true;

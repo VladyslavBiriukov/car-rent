@@ -211,6 +211,10 @@
 
         &--is-focused {
             color: #121417;
+
+            &:hover {
+                color: #ff4d30;
+            }
         }
 
     }
