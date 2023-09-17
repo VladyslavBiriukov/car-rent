@@ -18,6 +18,7 @@ export const Card = ({ data, change, fav }) => {
     address,
     functionalities,
     img,
+    photoLink,
     make,
     mileage,
     model,
@@ -72,7 +73,7 @@ export const Card = ({ data, change, fav }) => {
 
   return (
     <div className={styles.card}>
-      <img className={styles.img} src={img} alt="car" />
+      <img className={styles.img} src={img || photoLink} alt="car" />
       <div onClick={handleHeartClick} className={styles.heart}>
         <Heart
           fill={favorite ? favColor.fill : defaultColor.fill}

@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Card } from "../Card/Card";
 import styles from "./Favorite.module.scss";
 import { CarList } from "../CarList/CarList";
 
 export const Favorite = () => {
   const [cars, setcars] = useState(false);
   const [favorite, setFavorite] = useState(false);
-
-  console.log("cars", cars);
 
   useEffect(() => {
     setFavorite(false);
