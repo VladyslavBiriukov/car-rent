@@ -9,7 +9,7 @@ export const Favorite = () => {
   useEffect(() => {
     setFavorite(false);
     const local = JSON.parse(localStorage.getItem("fav"));
-    if (local && local !== []) {
+    if (local && local.length >= 0) {
       setcars(local);
     }
   }, [favorite]);
