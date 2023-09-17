@@ -15,7 +15,7 @@ export default defineConfig(({ command }) => {
     },
   };
   if (command !== "serve") {
-    config.base = "/car-rent/";
+    config.base = "/car-rent";
   }
   return config;
 });
