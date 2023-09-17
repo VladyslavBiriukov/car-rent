@@ -26,7 +26,7 @@ export const Favorite = () => {
       {cars && cars.length > 0 ? (
         <CarList changeFav={handleChangeFavorite} fav={true} cars={cars} />
       ) : (
-        <div className={styles.not_have}>You do not have favorite car yet</div>
+        <div className={styles.not_have}>You don't have a favorite car yet</div>
       )}
     </div>
   );
