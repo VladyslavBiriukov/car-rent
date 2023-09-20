@@ -27,14 +27,13 @@ export const Hero = () => {
                                 Rent the car of your dreams. Unbeatable prices, unlimited miles,
                                 flexible pick-up options and much more.
                             </p>
-                        </div>
-                        
                             <Link
                                 className={styles.heroBtn}
                                 to="/catalog"
                             >
                                 Look at our catalog &nbsp; <IconChevronRight />
                             </Link>
+                        </div>
                         {/* img */}
                         <img
                             src={HeroCar}

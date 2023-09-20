@@ -8,10 +8,15 @@ export const CarCatalog = () => {
   const [cars, setCars] = useState([]);
   const [page, setPage] = useState(1);
   const [searchCar, setSearchCar] = useState();
+  const [hasMore, setHasMore] = useState(true);
+
 
   useEffect(() => {
     (async () => {
       const allCar = await getCar(page);
+      if (allCar.length === 1) {
+        setHasMore(false); 
+      }
       setCars((prev) => [...prev, ...allCar]);
     })();
   }, [page, searchCar]);
@@ -22,15 +27,14 @@ export const CarCatalog = () => {
 
   const handleGetSearchCar = (data) => {
     setSearchCar(data);
+    setHasMore(true);
   };
 
   return (
-    <div className={styles.conteiner}>
+   <div className={styles.conteiner}>
       <Form getSearchCar={handleGetSearchCar} />
       <CarList cars={searchCar ? searchCar : cars} />
-      {searchCar && searchCar.length <= 12 ? (
-        ""
-      ) : (
+      {(!searchCar || (searchCar && searchCar.length <= 12)) && hasMore && (
         <button onClick={handleLoadMoreClick} className={styles.btn}>
           Load more
         </button>

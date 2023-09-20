@@ -99,15 +99,13 @@ $text-font: "Rubik", sans-serif;
 
 .heroBtn {
     display: flex;
+    width: 190px;
     padding: 1.8rem 3rem;
     background-color: #ff4d30;
     text-align: center;
     align-items: center;
     font-family: $titles-font;
     font-weight: 700;
-    position: absolute;
-    top: 825px;
-    left: 0;
     cursor: pointer;
     text-decoration: none;
     color: white;
