@@ -3,7 +3,7 @@ import axios from "axios";
 axios.defaults.baseURL = "https://6501961d736d26322f5bf63c.mockapi.io";
 
 export const getCar = async (page) => {
-  const car = await axios.get(`/vehicle?page=${page}&limit=12`);
+  const car = await axios.get(`/vehicle?page=${page}&limit=10`);
   return car.data;
 };
 
