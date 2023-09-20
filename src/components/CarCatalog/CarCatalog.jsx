@@ -34,7 +34,7 @@ export const CarCatalog = () => {
    <div className={styles.conteiner}>
       <Form getSearchCar={handleGetSearchCar} />
       <CarList cars={searchCar ? searchCar : cars} />
-      {(!searchCar || (searchCar && searchCar.length <= 10)) && hasMore && (
+      {(!searchCar || (searchCar && searchCar.length <= 12)) && hasMore && (
         <button onClick={handleLoadMoreClick} className={styles.btn}>
           Load more
         </button>
